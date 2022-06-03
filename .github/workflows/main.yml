@@ -1,9 +1,9 @@
 name: CI-CD-Pipeline-to-AWS-ElasticBeastalk
 env:
-  EB_PACKAGE_S3_BUCKET_NAME : "adv-it-flask-application-packages"
-  EB_APPLICATION_NAME       : "MyFlask"
-  EB_ENVIRONMENT_NAME       : "MyFlask-env"
-  DEPLOY_PACKAGE_NAME       : "flask_app_${{ github.sha }}.zip"
+  EB_PACKAGE_S3_BUCKET_NAME : "fibonacci-application-packages"
+  EB_APPLICATION_NAME       : "Fibonacci"
+  EB_ENVIRONMENT_NAME       : "Fibonacci-env"
+  DEPLOY_PACKAGE_NAME       : "Fibonacci_app_${{ github.sha }}.zip"
   AWS_REGION_NAME           : "us-west-2"
 
 on: 
@@ -54,7 +54,7 @@ jobs:
         --application-name ${{ env.EB_APPLICATION_NAME }} \
         --source-bundle S3Bucket="${{ env.EB_PACKAGE_S3_BUCKET_NAME }}",S3Key="${{ env.DEPLOY_PACKAGE_NAME }}" \
         --version-label "Ver-${{ github.sha }}" \
-        --description "CoimmitSHA-${{ github.sha }}"
+        --description "CommitSHA-${{ github.sha }}"
        
     - name: Deploy new ElasticBeanstalk Application Version
       run : aws elasticbeanstalk update-environment --environment-name ${{ env.EB_ENVIRONMENT_NAME }} --version-label "Ver-${{ github.sha }}"
