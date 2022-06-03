@@ -4,7 +4,7 @@
 
 
 Status of Last Deployment:<br>
-<img src="https://github.com/alexdoublesmile/-edu-Kubernetes/workflows/CICD-Pipeline-to-AWS-ElasticBeanstalk/badge.svg?branch=master"><br>
+<img src="https://github.com/alexdoublesmile/-edu-Kubernetes/workflows/CICD-Pipeline-to-AWS-ElasticBeanstalk/badge.svg?branch=main"><br>
 
 
 Copyleft by Alexandr Plohoy 2022
